@@ -1,0 +1,132 @@
+*{
+	box-sizing: border-box;
+	margin: 0px;
+}
+header {
+	position: sticky;
+	top: 0;
+	background-color: #292929;
+	box-shadow: 0px 5px 10px #292929;
+	z-index: 1;
+}
+/* Style the navigation menu */
+nav {
+  width: 100%;
+  background-color: #292929;
+  overflow: auto;
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  z-index: 1;
+}
+
+/* Navigation links */
+nav a {
+  float: left;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-size: 100%;
+  font-family: courier new;
+  font-weight: bold;
+  width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
+  border: 2px solid #292929;
+}
+
+/* Add a background color on mouse-over */
+nav a:hover {
+  background-color: #555;
+  border: 2px solid white;
+}
+
+/* Style the current/active link */
+nav a:active {
+  background-color: #00aeef;
+}
+aside {
+  width: 20%;
+  background-color: #00aeef;
+  padding: 2%;
+  float: left;
+}
+
+aside a {
+  display: block;
+  text-align: center;
+  padding: 10%;
+  transition: all 0.3s ease;
+  color: #292929;
+  font-size: 120%;
+  text-decoration: none;
+  margin-bottom: 10%;
+  border: 1px solid black;
+  border-radius: 2%;
+}
+aside p {
+  padding-top: 4%;
+  padding-bottom: 1%;
+  font-family: verdana;
+  font-weight: bold;
+}
+
+aside a:hover {
+  background-color: #000;
+  color: white;
+  font-family: courier new;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+section{
+	z-index: 0;
+	float:right;
+	width:80%;
+}
+section article{
+	overflow: scroll;
+	height: 101%;
+	overflow-x: hidden;
+	border-bottom: 2px solid black;
+}
+footer{
+	background-color: #292929;
+	color: white;
+	width: 100%;
+}
+footer table{
+	color: white;
+	text-align: center;
+	width: 100%;
+	font-family: verdana;
+}
+#ConInf{
+	padding: 20px;
+	text-align: left;
+	width: 30%;
+	border-right: 5px solid white;
+}
+#ConInf p{
+	margin-left: 20px;
+	margin-top: 5px;
+	color: white;
+}
+#ConInf img{
+	padding: 10px;
+	padding-top: 20px;
+}
+footer table td{
+	width: 23.33%;
+}
+footer a{
+	display: block;
+	text-decoration: none;
+	color: white;
+}
+footer a:hover, #nav a.active{
+	color: #00aeef;
+}
+#fb:active {
+	background: url("../images/social-icons-sprite.png") no-repeat 0 0;
+	width: 100px;
+	height: 100px;
+}
