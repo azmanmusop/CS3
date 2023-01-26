@@ -137,3 +137,64 @@ footer a:hover, #nav a.active{
 #section-nav a:hover, #nav a.active{
 	border:5px solid #292929;
 	border-bottom:5px solid #00aeef;
+#socmed{
+	background-color: #292929;
+	padding-bottom: 1%;
+	font-family: courier new;
+	text-decoration: none;
+}
+#Facebook {
+		position:relative;
+		border: 2px solid black;
+		border-radius: 10px;
+		background-color: white;
+		color: blue;
+		display:inline-block;
+		padding: 1%;
+		transition: transform 0.5s;
+}
+#Facebook a{
+	text-decoration: none;
+	color: blue;
+}
+			
+#Youtube {
+    position:relative;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: white;
+	color: red;
+	display:inline-block;
+	padding: 1%;
+	transition: transform 0.5s;
+}
+#Youtube a{
+	text-decoration: none;
+	color: red;
+}
+#Facebook:hover {
+	background-color: blue;
+	transform: scale(1.2);
+}
+			
+#Youtube:hover {
+	background-color: red;
+	transform: scale(1.2);
+}
+#Facebook a:hover {
+	color: white;
+}
+			
+#Youtube a:hover {
+	color: white;
+}
+#Facebook:active {
+	background: url('../images/facebook_logo.png') no-repeat 0 0;
+	width: 54px;
+	height: 54px;
+}
+#Youtube:active {
+	background: url('../images/youtube_logo.png') no-repeat 0 0;
+	width: 54px;
+	height: 54px;
+}
