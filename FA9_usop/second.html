@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			function water(){
+				document.getElementById("avatar").src = "images/watertribe.jpg";
+			}
+			function fire(){
+				document.getElementById("avatar").src = "images/firenationemblem.webp";
+			}
+		</script>
+		<center>
+		<h1>Welcome to the Second Page!</h1>
+		<p>Press the first button to replace the image.</p>
+		<p>Press the second button to revert back to the original image.</p>
+		<button onclick="water()">Water Tribe</button>
+		<button onclick="fire()">Fire Nation</button> <br><br><br>
+		<img id="avatar" src="images/watertribe.jpg" height="500px">
+		</center>
+	</body>
+</html>
