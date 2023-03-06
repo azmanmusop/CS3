@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h2 {
+				text-align: center;
+			}
+			div {
+				background-color: yellow;
+				width: 300px;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body onload="name(), random()">
+		<h2 id = "yourName" onload="name()"></h2>
+		<center>
+			<div>
+				<p id = "randomNumber"></p>
+				<p id = "breakdown"></p>
+			</div>
+		</center>
+		<script>
+		var x;
+		var y;
+		var name;
+			function random(){
+				x = Math.floor(Math.random()*1001);
+				y = String(x).split('');
+				document.getElementById("randomNumber").innerHTML = "Randomly generated number: " + x;
+				document.getElementById("breakdown").innerHTML = "Breakdown: " + y.slice(-3, -2)*100 + ", " + y.slice(-2, -1)*10 + ", " + y.slice(-1);
+				
+			}
+			function name(){
+				name = prompt("Hi! Before we move on to your randomly generated number, please enter your name: ")
+				document.getElementById("yourName").innerHTML = "Hello, " + name + "! Here's your randomly generated number.";
+			}
+		</script>
+	</body>
+</html>
