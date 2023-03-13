@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 id="coin" onclick="compGuess()"> H </h2>   
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+        <script>
+			var x;
+            /* do not forget to include comments to this script */
+            function getGuess() {
+                uGuess = prompt("Type H for head and T for tail","H");
+                uGuess.toUpperCase; // converting to an uppercase letter
+                (uGuess != "H" && uGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = uGuess;
+            }
+			function compGuess(){
+				x = Math.random();
+				if (x < 0.5){
+					document.getElementById("coin").innerHTML = "H";
+					x = "H"
+					if (x == uGuess){
+						alert("Your Guess is Correct!")
+					}
+					else{
+						alert("Your Guess is Wrong!")
+					}
+				}
+				else{
+					document.getElementById("coin").innerHTML = "T";
+					x = "T"
+					if (x == uGuess){
+						alert("Your Guess is Correct!")
+					}
+					else{
+						alert("Your Guess is Wrong!")
+					}
+				}
+			}
+
+        </script>
+	</body>
+</html>
