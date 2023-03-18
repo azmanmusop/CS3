@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	
+		<meta charset="UTF-8">
+		<meta name="description" content="Summative Test - Task 6">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Azman Usop">
+		
+        <title>One Time Password </title>
+        <style>
+            body {background: lightblue;
+            text-align: center;
+            font-family: arial;
+            color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+    </head>
+    <body onload="callOTP()">
+        <h1> Final Verification Step </h1>
+        <h2> Current OTP: <span id="otp"> _ _ _ _ _ _ </span> <a onclick = "callOTP()"> New OTP </a> </h2>
+        <button onclick = "verifyOTP()"> Enter the OTP as shown above </button>
+        <script>
+			// initiates currentOTP
+            var currentOTP;
+             
+			// generates a ranodm number for currentOTP then the number is converted to a string
+            function callOTP(){
+				currentOTP = Math.floor(Math.random()*(1000000 - 100000) + 100000);
+				currentOTP = String(currentOTP);
+				document.getElementById("otp").innerHTML = currentOTP;
+            }
+			// prompts to verify if OTP is correct or not
+            function verifyOTP(){
+                verify = prompt("Please Enter the OTP that was shown: ");
+				if (verify == currentOTP){
+					window.open("http://www.taylorswift.com/");
+                }
+				else{
+					alert("Sorry, OTP is not correct! Please Try Again.");
+					callOTP();
+				}
+			}
+        </script>
+    </body>
+</html>

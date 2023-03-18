@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset="UTF-8">
+		<meta name="description" content="Summative Test - Task 1">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Azman Usop">
+		
+		<title>Toss coin</title>
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 id="coin" onclick="compGuess()"> H </h2>   
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+        <script>
+			// initalizes variable x that will be used as the random coin flip of the computer
+			var x;
+			
+            getGuess = function() {
+                uGuess = prompt("Type H for head and T for tail","H");
+                uGuess.toUpperCase; // converting to an uppercase letter
+                (uGuess != "H" && uGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = uGuess;
+            }
+			
+			function compGuess(){
+				x = Math.random();	//generates a random number between 0 and 1
+				if (x < 0.5){	//checks if number is less than 0.5 (Heads) or else (Tails)
+					document.getElementById("coin").innerHTML = "H";	// outputs "H" or "T"
+					x = "H"	// converts the value of x to either of the strings "H" or "T"
+					if (x == uGuess){	//checks if uGuess and x is equal or not
+						alert("Your Guess is Correct!")
+					}
+					else{
+						alert("Your Guess is Wrong!")
+					}
+				}
+				else{
+					document.getElementById("coin").innerHTML = "T";
+					x = "T"
+					if (x == uGuess){
+						alert("Your Guess is Correct!")
+					}
+					else{
+						alert("Your Guess is Wrong!")
+					}
+				}
+			}
+
+        </script>
+	</body>
+</html>

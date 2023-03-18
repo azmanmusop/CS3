@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset="UTF-8">
+		<meta name="description" content="Summative Test - Task 7">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Azman Usop">
+		
+		<title>Numerology</title>
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button onclick = "fortuneName()"> Click here to enter your name </button>
+     <script>
+		function fortuneName(){
+			var name = prompt("Please Enter Your Name: ");
+			var nameLength = name.length;
+			
+			// This block of code loops a number until the sum of all digits is a one-digit number
+			/* Example: nameLength is 153; 
+				Loop 1: ((153 - 3) / 10) + 3 = 15 + 3 = 18; true
+				Loop 2: ((18 - 8) / 10) + 8 = 1 + 8 = 9; false 
+			*/
+			while (nameLength % 10 != nameLength){
+				nameLength = ((nameLength - (nameLength%10)) / 10) + (nameLength%10);
+			}
+			// This block of code outputs the resulting fortune based on the nameLength
+			switch(nameLength){
+				case 0:
+					document.getElementById("fortune").innerHTML = "You will conquer obstacles to achieve success.";
+					break;
+				case 1:
+					document.getElementById("fortune").innerHTML = "When fear hurts you, conquer it and defeat it!";
+					break;
+				case 2:
+					document.getElementById("fortune").innerHTML = "A dream you have will come true.";
+					break;
+				case 3:
+					document.getElementById("fortune").innerHTML = "Jealousy doesn't open doors, it closes them!";
+					break;
+				case 4:
+					document.getElementById("fortune").innerHTML = "Adversity is the parent of virtue.";
+					break;
+				case 5:
+					document.getElementById("fortune").innerHTML = "Our deeds determine us, as much as we determine our deeds.";
+					break;
+				case 6:
+					document.getElementById("fortune").innerHTML = "The greatest love is self-love.";
+					break;
+				case 7:
+					document.getElementById("fortune").innerHTML = "Love can last a lifetime, if you want it to.";
+					break;
+				case 8:
+					document.getElementById("fortune").innerHTML = "A new voyage will fill your life with untold memories.";
+					break;
+				case 9:
+					document.getElementById("fortune").innerHTML = "It's better to be alone sometimes.";
+					break;
+			}
+		}
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset="UTF-8">
+		<meta name="description" content="Summative Test - Task 4">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Azman Usop">
+		
+		<title>Car Deprecation Calculator</title>
+        <style>
+        	body {background: lightblue; 
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Car Depreciation Calculator </h1>
+	<h2> Your Car Model: <span id="model"> </span></h2>
+    <h2> Car Cost: <span id="cost"> </span></h2>
+    <h2> Age of your Car: <span id="age"> </span></h2>
+    <h2> Good Condition?: <span id="condition"> </span></h2>
+    <h2> Your Car's Current Market Value: <span id="currentvalue"> </span></h2>
+    
+    <button onclick="enterCar()"> Enter your Car information </button>
+    <script>
+		// This function checks for age and then checks if good or not. Then, it calculates for the CMV.
+		// Note: When calculating for if item not in good condition, the cost is multiplied to 90% which is same as subtracting 10% of cost.
+		function computeMarketValue(cost, age, good){
+			if (age > 10){
+				if (good != true){
+					// If age is more than 10 and is in not good codition, the value is 63000.
+					document.getElementById("currentvalue").innerHTML = 70000 * 0.9;
+				}
+				else{
+					// If age is more than 10 and is in good codition, the value is 70000.
+					document.getElementById("currentvalue").innerHTML = 70000;
+				}
+			}
+			else if (age >= 8){
+				if (good != true){
+					// If age is in interval [8 to 10] and is in not good codition, the value is 90000.
+					document.getElementById("currentvalue").innerHTML = 100000 * 0.9;
+				}
+				else{
+					// If age is interval [8 to 10] and is in not good codition, the value is 100000.
+					document.getElementById("currentvalue").innerHTML = 100000;
+				}
+			}
+			else if (age >= 5){
+				if (good != true){
+					// If age is in interval [5 to 8) and is in not good codition, the value is 90% of 25% of original cost.
+					document.getElementById("currentvalue").innerHTML = (cost*0.25) * 0.9;
+				}
+				else{
+					// If age is in interval [5 to 8) and is in not good codition, the value is 25% of original cost.
+					document.getElementById("currentvalue").innerHTML = (cost*0.25);
+				}
+			}
+			else{
+				if (good != true){
+					// If age is less than 5 and is in not good codition, the value is 90% of 50% of original cost.
+					document.getElementById("currentvalue").innerHTML = (cost*0.50) - ((cost*0.75)*0.10);
+				}
+				else{
+					// If age is less than 5 and is in good codition, the value is 50% of original cost.
+					document.getElementById("currentvalue").innerHTML = (cost*0.50);
+				}
+			}
+		}
+    	function enterCar() {
+        	carmodel = prompt("Enter Car Model");
+            carcost = prompt("Enter Cost of the Car");
+            carage = prompt("How old is your car?");
+            good = confirm("In Good Condition? Ok for Yes / Cancel for No");
+            model.innerHTML = carmodel;
+            cost.innerHTML = carcost;
+            age.innerHTML = carage;
+            condition.innerHTML = (good) ? "Yes" : "No";      
+            computeMarketValue(parseFloat(carcost),parseFloat(carage),good); // create this function 
+        }
+    </script>
+    
+</body>
+</html>
