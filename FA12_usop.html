@@ -33,7 +33,7 @@
 			var colVal = parseInt(document.getElementById("colVal").value);
 
 			// Validate user input
-			if (isNaN(rowVal) || isNaN(colVal) || rowVal < 2 || colVal > 10) {
+			if (isNaN(rowVal) || isNaN(colVal) || rowVal < 2 || colVal > 10 || rowVal > 10 || colVal < 2) {
 				alert("Please enter numbers between 2 and 10");
 				return;
 			}
