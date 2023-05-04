@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Alternative Assessment 1">
+        <meta name="keywords" content="JavaScript">
+        <meta name="author" content="Azman Usop">
+    </head>
+    <body>
+        <script>
+            // Define a function that checks whether any of the given substrings are present in the given string
+            function areSubstringsPresent(string, substring1, substring2, substring3) {
+                return string.includes(substring1) || string.includes(substring2) || string.includes(substring3);
+            }
+            // Define a function that returns the index of the first occurrence of any of the given substrings in the given array
+            function getIndexOfFirstSubstring(array, substring1, substring2, substring3) {
+            // Get the index of each substring in the array
+            var index1 = array.indexOf(substring1);
+            var index2 = array.indexOf(substring2);
+            var index3 = array.indexOf(substring3);
+            // Store the indeces in an array
+            var indeces = [index1, index2, index3];
+            // Sort the array in ascending order
+            indeces = indeces.sort();
+            // Remove any -1 values (i.e. the substring is not present in the array)
+            indeces = indeces.filter(function(index) {
+                return index !== -1;
+            });
+            // Return the index of the first substring occurrence in the array
+            return indeces[0];
+            }
+            
+            // Initialize variables
+            var cdnArr = [];
+            var firstEndIndex;
+            
+            // Prompt the user to enter a genetic sequence and convert it to uppercase
+            var geneSeq = prompt("Please Enter Genetic Sequence: ").toUpperCase();
+            // Convert the genetic sequence to an array of codons starting from the first AUG
+            var geneSeqArray = [];
+            geneSeq = geneSeq.slice(geneSeq.indexOf("AUG"), geneSeq.length);
+            if ("AUG" == geneSeq.slice(0, 3) && areSubstringsPresent(geneSeq, "UAG", "UAA", "UGA") == true) {
+            for (var i = 0; i < geneSeq.length; i+=3) {
+                geneSeqArray.push(geneSeq.slice(i, i + 3));
+            }
+            // Get the index of the first occurrence of any of the stop codons
+            firstEndIndex = getIndexOfFirstSubstring(geneSeqArray, "UAG", "UAA", "UGA");
+            // Remove all codons after the first stop codon
+            for (var i in geneSeqArray) {
+                if (i > firstEndIndex) {
+                    geneSeqArray.pop(geneSeqArray[i]);
+                }
+            }
+            // Convert the codon array to an array of codon strings in double quotes
+            cdnArr = geneSeqArray.map(function(cdn) {
+                return `"${cdn}"`;
+            });
+            // Write the codon array to the document
+            document.write("[" + cdnArr.join(`, `) + "]<br>");
+            // Translate each codon to an amino acid and write it to the document
+            for (var i in geneSeqArray){
+            switch(geneSeqArray[i]) {
+            	  case "UUU":
+            	  case "UUC":
+            		document.write(geneSeqArray[i] + " --> Phe" + "<br>");
+            		break;
+            	  case "UUA":
+            	  case "UUG":
+            	  case "CUU":
+            	  case "CUC":
+            	  case "CUA":
+            	  case "CUG":
+            		document.write(geneSeqArray[i] + " --> Leu" + "<br>");
+            		break;
+            	  case "AUU":
+            	  case "AUC":
+            	  case "AUA":
+            		document.write(geneSeqArray[i] + " --> Ile" + "<br>");
+            		break;
+            	  case "AUG":
+            		document.write(geneSeqArray[i] + " --> Met" + "<br>");
+            		break;
+            	  case "GUU":
+            	  case "GUC":
+            	  case "GUA":
+            	  case "GUG":
+            		document.write(geneSeqArray[i] + " --> Val" + "<br>");
+            		break;
+            	  case "UCU":
+            	  case "UCC":
+            	  case "UCA":
+            	  case "UCG":
+            	  case "AGU":
+            	  case "AGC":
+            		document.write(geneSeqArray[i] + " --> Ser" + "<br>");
+            		break;
+            	  case "CCU":
+            	  case "CCC":
+            	  case "CCA":
+            	  case "CCG":
+            		document.write(geneSeqArray[i] + " --> Pro" + "<br>");
+            		break;
+            	  case "ACU":
+            	  case "ACC":
+            	  case "ACA":
+            	  case "ACG":
+            		document.write(geneSeqArray[i] + " --> Thr" + "<br>");
+            		break;
+            	  case "GCU":
+            	  case "GCC":
+            	  case "GCA":
+            	  case "GCG":
+            		document.write(geneSeqArray[i] + " --> Ala" + "<br>");
+            		break;
+            	  case "UAU":
+            	  case "UAC":
+            		document.write(geneSeqArray[i] + " --> Tyr" + "<br>");
+            		break;
+            	  case "UAA":
+            	  case "UAG":
+            	  case "UGA":
+            		document.write(geneSeqArray[i] + " --> Stop" + "<br>");
+            		break;
+            	  case "CAU":
+            	  case "CAC":
+            		document.write(geneSeqArray[i] + " --> His" + "<br>");
+            		break;
+            	  case "CAA":
+            	  case "CAG":
+            		document.write(geneSeqArray[i] + " --> Gln" + "<br>");
+            		break;
+            	  case "AAU":
+            	  case "AAC":
+            		document.write(geneSeqArray[i] + " --> Asn" + "<br>");
+            		break;
+            	  case "AAA":
+            	  case "AAG":
+            		document.write(geneSeqArray[i] + " --> Lys" + "<br>");
+            		break;
+            	  case "GAU":
+            	  case "GAC":
+            		document.write(geneSeqArray[i] + " --> Asp" + "<br>");
+            		break;
+            	  case "GAA":
+            	  case "GAG":
+            		document.write(geneSeqArray[i] + " --> Glu" + "<br>");
+            		break;
+            	  case "UGU":
+            	  case "UGC":
+            		document.write(geneSeqArray[i] + " --> Leu" + "<br>");
+            		break;
+            	  case "UGG":
+            		document.write(geneSeqArray[i] + " --> Trp" + "<br>");
+            		break;
+            	  case "CGU":
+            	  case "CGC":
+            	  case "CGA":
+            	  case "CGG":
+            	  case "AGA":
+            	  case "AGG":
+            		document.write(geneSeqArray[i] + " --> Arg" + "<br>");
+            		break;
+            	  case "GGU":
+            	  case "GGC":
+            	  case "GGA":
+            	  case "GGG":
+            		document.write(geneSeqArray[i] + " --> Gly" + "<br>");
+            		break;
+            	  default:
+            		alert("Your mRNA sequence cannot be identified!")
+            		break;
+            	}
+            }
+            }
+            else {
+            alert("mRNA sequence cannot be identified!");
+            }
+            	
+            
+        </script>
+    </body>
+</html>
