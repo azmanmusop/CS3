@@ -39,7 +39,7 @@
             // Convert the genetic sequence to an array of codons starting from the first AUG
             var geneSeqArray = [];
             geneSeq = geneSeq.slice(geneSeq.indexOf("AUG"), geneSeq.length);
-			for (var i = 0; i < geneSeq.length; i+=3) {
+	    for (var i = 0; i < geneSeq.length; i+=3) {
                 geneSeqArray.push(geneSeq.slice(i, i + 3));
             }
             if ("AUG" == geneSeq.slice(0, 3) && areSubstringsPresent(geneSeqArray, "UAG", "UAA", "UGA")) {
