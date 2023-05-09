@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				font-family: Verdana, sans-serif;
+				background-image: url("https://m.media-amazon.com/images/I/8134Bd5apAL._AC_SX679_.jpg");
+				padding: 20px;
+			}
+			
+			header {
+				margin: 0 auto;
+				text-align: center;
+				background-image: url("https://w0.peakpx.com/wallpaper/9/38/HD-wallpaper-avatar-anime-avatar-the-last-airbender-pixel-art.jpg");
+				background-size: 120%;
+				width: 80%;
+				border: 1px solid #FFFDD0;
+				padding: 20px;
+				font-size: 24px;
+				font-weight: bold;
+				color: #292929;
+				margin-bottom: 20px;
+			}
+
+			form {
+				background-image: url("https://moewalls.com/wp-content/uploads/2022/10/spirit-world-avatar-the-last-airbender-thumb.jpg");
+				padding: 20px;
+				max-width: 400px;
+				margin: 0 auto;
+				border: 1px solid #FFFDD0;
+				color: #FFFDD0;
+			}
+			
+			fieldset {
+				border: none;
+				padding: 0;
+				margin: 0;
+			}
+			
+			legend {
+				font-size: 24px;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+			
+			label {
+				display: block;
+				margin-bottom: 10px;
+				font-weight: bold;
+			}
+			
+			input[type="text"],
+			input[type="password"],
+			input[type="email"],
+			textarea,
+			select {
+				width: 100%;
+				padding: 10px;
+				border-radius: 4px;
+				box-sizing: border-box;
+				margin-bottom: 15px;
+				font-size: 16px;
+			}
+			
+			select {
+				height: 40px;
+			}
+			
+			button[type="submit"],
+			button[type="reset"] {
+				background-color: #4CAF50;
+				color: #fffdd0;
+				border-radius: 4px;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+				margin-right: 10px;
+				text-shadow: 3px 3px 3px 3px #292929;
+			}
+			
+			button[type="reset"] {
+				background-color: #f44336;
+			}
+			
+			.error {
+				border: 2px solid red;
+			}
+			
+			.success {
+				border: 2px solid green;
+			}
+			
+			#output {
+				width: 30%;
+				margin-top: 20px;
+				background-image: url("https://w0.peakpx.com/wallpaper/9/38/HD-wallpaper-avatar-anime-avatar-the-last-airbender-pixel-art.jpg");
+				color: #292929;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function resetBorder(element) {
+				element.classList.remove("error");
+				element.classList.remove("success");
+			}
+			function validateInput(element) {
+				if (element.value === "") {
+					element.classList.add("error");
+				} else {
+					element.classList.remove("error");
+					element.classList.add("success");
+				}
+			}
+			function onSubmit(){
+				var name = document.getElementById("name").value
+				var username = document.getElementById("username").value
+				var gender = document.getElementById("gender").value
+				var password = document.getElementById("password").value
+				var email = document.getElementById("email").value
+				var address = document.getElementById("address").value
+				var interest = document.getElementById("interest/s").value
+				var output = document.getElementById("output").innerHTML = "<h2>Sign-Up Information:</h2>" +
+				"<p><strong>Name:</strong> " + name + "</p>" +
+				"<p><strong>Username:</strong> " + username + "</p>" +
+				"<p><strong>Gender:</strong> " + gender + "</p>" +
+				"<p><strong>Password:</strong> " + password + "</p>" +
+				"<p><strong>Email:</strong> " + email + "</p>" +
+				"<p><strong>Address:</strong> " + address + "</p>" +
+				"<p><strong>Interest:</strong> " + interest + "</p>"
+				
+				return false;
+			}
+		</script>
+		
+		<header>
+			Good Day, Everyone! Please sign-up if you are an Avatar: The Last Airbender. fan!!!
+		</header>
+		<form onsubmit = "return onSubmit()">
+			<fieldset>
+				<legend>Sign-Up Form:</legend> <br>
+				
+				<!-- Name -->
+				<label>Name:</label>
+				<input type="text" id="name" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+				
+				<!-- Username -->
+				<label>Username:</label>
+				<input type="text" id="username" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+				
+				<!-- Gender -->
+				<label>Gender:</label>
+				<select id="gender" required onblur="validateInput(this)"onfocus="resetBorder(this)">
+					<option value="" disabled selected>Select Gender</option>
+					<option>Male</option>
+					<option>Female</option>
+					<option>Prefer Not to Mention</option>
+				</select>
+				<br><br>
+				
+				<!-- Password -->
+				<label>Password:</label>
+				<input type="password" id="password" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+				
+				<!-- Email -->
+				<label>Email Address:</label>
+				<input type="email" id="email" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+				
+				<!-- Address -->
+				<label for="address">Address:</label> <br>
+				<textarea name="address" id="address" required onblur="validateInput(this)"onfocus="resetBorder(this)"></textarea> <br><br>
+				
+				<!-- Interest/s -->
+				<label for="interest/s">Interest/s:</label> <br>
+				<textarea name="interest/s" id="interest/s" required onblur="validateInput(this)"onfocus="resetBorder(this)"></textarea> <br><br>
+				
+				<button type="submit">Submit</button>
+				<button type="reset">Reset</button>
+			</fieldset>
+		</form>		
+		
+		<div id="output"></div>
+	</body>
+</html>
