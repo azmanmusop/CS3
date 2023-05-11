@@ -4,31 +4,41 @@
 		<style>
 			body {
 				font-family: Verdana, sans-serif;
-				background-image: url("https://m.media-amazon.com/images/I/8134Bd5apAL._AC_SX679_.jpg");
 				padding: 20px;
+				background-image: url("https://i.pinimg.com/originals/ed/d7/e4/edd7e46191f50dad75ede470c3b6070f.jpg");
 			}
 			
+			
 			header {
-				margin: 0 auto;
-				text-align: center;
-				background-image: url("https://w0.peakpx.com/wallpaper/9/38/HD-wallpaper-avatar-anime-avatar-the-last-airbender-pixel-art.jpg");
-				background-size: 120%;
-				width: 80%;
-				border: 1px solid #FFFDD0;
+				box-shadow: 5px 10px #00aeef;
+				background-image: linear-gradient(to bottom, #fff, #fffdd4);
 				padding: 20px;
-				font-size: 24px;
-				font-weight: bold;
+				max-width: 800px;
+				margin: 0 auto;
+				margin-bottom: 30px;
+				border: 1px solid #292929;
 				color: #292929;
-				margin-bottom: 20px;
+				border-radius: 20px;			}
+			
+			h1 {
+				font-size: 32px;
+				margin-bottom: 10px;
+			}
+			
+			p {
+				font-size: 18px;
+				margin-bottom: 0;
 			}
 
 			form {
-				background-image: url("https://moewalls.com/wp-content/uploads/2022/10/spirit-world-avatar-the-last-airbender-thumb.jpg");
+				box-shadow: 5px 10px #00aeef;
+				background-color: #fffdd4;
 				padding: 20px;
 				max-width: 400px;
 				margin: 0 auto;
-				border: 1px solid #FFFDD0;
-				color: #FFFDD0;
+				border: 1px solid #292929;
+				color: #292929;
+				border-radius: 20px;
 			}
 			
 			fieldset {
@@ -89,14 +99,6 @@
 			.success {
 				border: 2px solid green;
 			}
-			
-			#output {
-				width: 30%;
-				margin-top: 20px;
-				background-image: url("https://w0.peakpx.com/wallpaper/9/38/HD-wallpaper-avatar-anime-avatar-the-last-airbender-pixel-art.jpg");
-				color: #292929;
-				margin: 0 auto;
-			}
 		</style>
 	</head>
 	<body>
@@ -121,7 +123,7 @@
 				var email = document.getElementById("email").value
 				var address = document.getElementById("address").value
 				var interest = document.getElementById("interest/s").value
-				var output = document.getElementById("output").innerHTML = "<h2>Sign-Up Information:</h2>" +
+				var output = document.getElementById("output").innerHTML = "<center><h1>Here's what we got from you!</h1></center><h2>Sign-Up Information:</h2>" +
 				"<p><strong>Name:</strong> " + name + "</p>" +
 				"<p><strong>Username:</strong> " + username + "</p>" +
 				"<p><strong>Gender:</strong> " + gender + "</p>" +
@@ -129,14 +131,19 @@
 				"<p><strong>Email:</strong> " + email + "</p>" +
 				"<p><strong>Address:</strong> " + address + "</p>" +
 				"<p><strong>Interest:</strong> " + interest + "</p>"
+				+" <style> #output {max-width: 600px;margin: 30px auto;border: 1px solid green;padding: 20px;border-radius: 10px;background-color: #fff;box-shadow: 5px 10px #00aeef;color: #292929;}#output h2 {font-size: 24px;margin-bottom: 10px;}#output p {font-size: 18px;margin-bottom: 5px;} </style>"
+				
+			
 				
 				return false;
 			}
 		</script>
 		
 		<header>
-			Good Day, Everyone! Please sign-up if you are an Avatar: The Last Airbender. fan!!!
+			<h1>Friend Group Application Form</h1>
+			<p><strong>Please fill out the form below to sign up to our friend group :)</strong> (Depende po if ma-accept po kayo pero most probably hindi po since di po makastore ng data ang form hehe)</p>
 		</header>
+		
 		<form onsubmit = "return onSubmit()">
 			<fieldset>
 				<legend>Sign-Up Form:</legend> <br>
@@ -176,7 +183,7 @@
 				<textarea name="interest/s" id="interest/s" required onblur="validateInput(this)"onfocus="resetBorder(this)"></textarea> <br><br>
 				
 				<button type="submit">Submit</button>
-				<button type="reset">Reset</button>
+				<button type="reset" onclick="location.reload()">Reset</button>
 			</fieldset>
 		</form>		
 		
