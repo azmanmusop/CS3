@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NCE Review Quizzer</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            }
+            h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            }
+            #quiz {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+            margin-top: 0;
+            }
+            .question {
+            margin-bottom: 20px;
+            }
+            select.answer {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+            p.feedback {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            }
+            .feedback.correct {
+            color: green;
+            }
+            .feedback.incorrect {
+            color: red;
+            }
+            #submitBtn,
+            #resetBtn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            }
+            #submitBtn {
+            background-color: #4285f4;
+            color: #fff;
+            margin-top: 20px;
+            }
+            #resetBtn {
+            background-color: #ff5722;
+            color: #fff;
+            margin-top: 10px;
+            }
+            #score {
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            }
+            /* Custom styles */
+            select.answer option[disabled]:first-child {
+            color: #999;
+            }
+            select.answer option[disabled]:last-child {
+            color: #000;
+            }
+            select.answer {
+            border: 1px solid #000;
+            }
+            #submitBtn:hover {
+            background-color: #1e4aff;
+            }
+            #resetBtn:hover {
+            background-color: #ff4400;
+            }
+            .feedback.correct {
+            color: blue;
+            }
+            .feedback.incorrect {
+            color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>NCE Review Quizzer</h1>
+        <div id="quiz">
+            <h2>Multiple Choice Questions</h2>
+            <form id="nceForm">
+                <div class="question">
+                    <p>1. What kind of organisms come last in every food chain?</p>
+                    <select class="answer" required name="q1">
+                        <option value="" disabled selected disabled selected>Select an answer</option>
+                        <option value="a">Omnivores</option>
+                        <option value="b">Consumers</option>
+                        <option value="c">Producers</option>
+                        <option value="d">Decomposers</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>2. Transpiration is a process in plants that is responsible for:</p>
+                    <select class="answer" required name="q2">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Making of Food</option>
+                        <option value="b">Making of Water</option>
+                        <option value="c">Losing Water</option>
+                        <option value="d">Losing Food</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>3. When a plant performs the process of photosynthesis, what is produced?</p>
+                    <select class="answer" required name="q3">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Carbon Dioxide</option>
+                        <option value="b">Oxygen</option>
+                        <option value="c">Nitrogen</option>
+                        <option value="d">Green Pigment</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>4. Why should we wear light colored clothes during the summer?</p>
+                    <select class="answer" required name="q4">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Light colors are good radiator of heat</option>
+                        <option value="b">Light colors soak sweat faster</option>
+                        <option value="c">Light color absorbs less heat</option>
+                        <option value="d">Light color allows body heat escape faster</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>5. Which of the following is NOT a state of matter?</p>
+                    <select class="answer" required name="q5">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Solid</option>
+                        <option value="b">Liquid</option>
+                        <option value="c">Gas</option>
+                        <option value="d">Energy</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>6. What is the main function of the nucleus in a cell?</p>
+                    <select class="answer" required name="q6">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Controls cell activities</option>
+                        <option value="b">Produces energy</option>
+                        <option value="c">Allows cell movement</option>
+                        <option value="d">Stores waste materials</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>7. Which force allows objects to float in water?</p>
+                    <select class="answer" required name="q7">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Gravity</option>
+                        <option value="b">Friction</option>
+                        <option value="c">Buoyancy</option>
+                        <option value="d">Inertia</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>8. Which of the following is an example of a simple machine?</p>
+                    <select class="answer" required name="q8">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Bicycle</option>
+                        <option value="b">Car</option>
+                        <option value="c">Computer</option>
+                        <option value="d">Lever</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>9. What is the largest organ in the human body?</p>
+                    <select class="answer" required name="q9">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Brain</option>
+                        <option value="b">Liver</option>
+                        <option value="c">Heart</option>
+                        <option value="d">Skin</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>10. Which of the following is a conductor of electricity?</p>
+                    <select class="answer" required name="q10">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Wood</option>
+                        <option value="b">Glass</option>
+                        <option value="c">Plastic</option>
+                        <option value="d">Copper</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>11. What is the function of the ozone layer in the Earth's atmosphere?</p>
+                    <select class="answer" required name="q11">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Regulates air pressure</option>
+                        <option value="b">Absorbs ultraviolet (UV) radiation</option>
+                        <option value="c">Generates rainfall</option>
+                        <option value="d">Filters air pollutants</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>12. Which of the following is a landform created by the action of a river?</p>
+                    <select class="answer" required name="q12">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Glacier</option>
+                        <option value="b">Volcano</option>
+                        <option value="c">Canyon</option>
+                        <option value="d">Delta</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>13. Which of the following is the hardest mineral on the Mohs scale?</p>
+                    <select class="answer" required name="q13">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Quartz</option>
+                        <option value="b">Diamond</option>
+                        <option value="c">Talc</option>
+                        <option value="d">Feldspar</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>14. What is the process of a liquid changing into a gas called?</p>
+                    <select class="answer" required name="q14">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Condensation</option>
+                        <option value="b">Evaporation</option>
+                        <option value="c">Sublimation</option>
+                        <option value="d">Melting</option>
+                    </select>
+                    <p class="feedback"></p>
+                    <p>15. What is the study of fossils called?</p>
+                    <select class="answer" required name="q15">
+                        <option value="" disabled selected>Select an answer</option>
+                        <option value="a">Geology</option>
+                        <option value="b">Paleontology</option>
+                        <option value="c">Astronomy</option>
+                        <option value="d">Archaeology</option>
+                    </select>
+                    <p class="feedback"></p>
+                </div>
+                <h2>Fill in the Blanks or Answer as Directed</h2>
+                <div class="question">
+                    <p>1. The process by which plants use sunlight to make food is called __________.</p>
+                    <input class="answer" type="text" name="q16">
+                    <p class="feedback"></p>
+                    <p>2. __________ is the force that pulls objects towards the center of the Earth.</p>
+                    <input class="answer" type="text" name="q17">
+                    <p class="feedback"></p>
+                    <p>3.The smallest unit of matter is called a __________.</p>
+                    <input class="answer" type="text" name="q18">
+                    <p class="feedback"></p>
+                    <p>4. The process by which plants release water vapor through their leaves is called __________.</p>
+                    <input class="answer" type="text" name="q19">
+                    <p class="feedback"></p>
+                    <p>5. __________ is the transfer of heat energy through direct contact between objects.</p>
+                    <input class="answer" type="text" name="q20">
+                    <p class="feedback"></p>
+                </div>
+                <button id="submitBtn" type="button">Submit</button>
+                <button id="resetBtn" type="button" onclick="location.reload()">Reset</button>
+                <p id="score"></p>
+            </form>
+        </div>
+        <script>
+            document.getElementById("submitBtn").addEventListener("click", calculateScore);
+            
+            function calculateScore() {
+            event.preventDefault();
+              let totalScore = 0;
+            
+              // Calculate score for multiple choice questions
+              const nceForm = document.getElementById("nceForm");
+              const mcqAns = {
+                q1: "d",
+            q2: "c",
+            q3: "b",
+            q4: "c",
+            q5: "d",
+            q6: "a",
+            q7: "c",
+            q8: "d",
+            q9: "d",
+            q10: "d",
+            q11: "b",
+            q12: "c",
+            q13: "b",
+            q14: "b",
+            q15: "b"
+              };
+            const fibAns = {
+                q16: "photosynthesis",
+            q17: "gravity",
+            q18: "atom",
+            q19: "transpiration",
+            q20: "conduction"
+              };
+            
+              for (const qNum in mcqAns) {
+                const selectedOption = nceForm.elements[qNum].value;
+                const feedback = nceForm.elements[qNum].nextElementSibling;
+            
+                if (!selectedOption) {
+                  feedback.textContent = "Please select an answer.";
+                  feedback.classList.remove("correct", "incorrect");
+                } else if (selectedOption === mcqAns[qNum]) {
+                  feedback.textContent = "Correct!";
+                  feedback.classList.add("correct");
+                  totalScore++;
+                } else {
+                  feedback.textContent = "Incorrect!";
+                  feedback.classList.add("incorrect");
+                }
+              }
+            
+              for (const qNum in fibAns) {
+            const userAnswer = nceForm.elements[qNum].value;
+            const feedback = nceForm.elements[qNum].nextElementSibling;
+            
+                if (!userAnswer) {
+                  feedback.textContent = "Please provide an answer.";
+                  feedback.classList.remove("correct", "incorrect");
+                } else if (userAnswer.toLowerCase().trim() === fibAns[qNum]) {
+                  feedback.textContent = "Correct!";
+                  feedback.classList.add("correct");
+                  totalScore++;
+                } else {
+                  feedback.textContent = "Incorrect!";
+                  feedback.classList.add("incorrect");
+                }
+              }
+            
+              const scoreElement = document.getElementById("score");
+              scoreElement.textContent = "Total Score: " + totalScore;
+            
+              nceForm.removeEventListener("submit", calculateScore);
+              return false;
+            }
+            
+        </script>
+    </body>
+</html>
